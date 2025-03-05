@@ -28,10 +28,10 @@ class HAC:
     w:int = 10
     label_size:int = 14
     orientation:str = 'left'
-    dist_metric:str = 'cosine' 
+    dist_metric:str = 'euclidean' 
     linkage_method:str = 'ward' 
     norm_type:str = 'l2' 
-    color_thresh:float = None
+    color_thresh:float = 0
     
     def __init__(self, X, labels=None):
         self.X = X
@@ -60,8 +60,12 @@ class HAC:
             above_threshold_color='.75',
             color_threshold=self.color_thresh);
         plt.tick_params(axis='both', which='major', labelsize=self.label_size)
+
+    def get_cluster_labels(self):
+        self.CLUSTER_LABELS = sch.fcluster(self.TREE, t=self.color_thresh, criterion='distance')
         
     def plot(self):
         self.get_sims()
         self.get_tree()
         self.plot_tree()
+        # self.get_cluster_labels()
