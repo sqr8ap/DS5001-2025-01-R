@@ -1,0 +1,19 @@
+digraph G {
+
+    texts [label="texts\n(list of lists)"]
+    freq [label="frequency\n(dict)"]
+    filtered [label="filtered_corpus\n(lists of lists)"]
+    dict [label="dictionary\n(object)"]
+    BOW [label="bow_corpus\n(object)"]
+    TFIDF [label="tfidf\n(object)"]
+    LDA [label="lda_model\n(object)"]
+    HDP [label="hdp_model\n(object)"]
+
+    texts -> freq -> filtered
+    texts -> filtered
+    filtered -> dict [label=" corpora.Dictionary()"]
+    dict -> BOW [label=" .doc2bow()"]
+    BOW -> TFIDF [label=" models.TfidfModel()"]
+    BOW -> LDA [label=" models.LdaModel()"]
+    BOW -> HDP [label=" models.HdpModel()"]
+}
