@@ -1,398 +1,280 @@
 graph G {
 # Nodes
-	T00 [label="T00 MELVILLE
- passengers emigrants steerage
-cabin mess cook"]
+	T00 [label="T00 AUSTEN
+ room house door
+time day night" shape=ellipse]
 	T01 [label="T01 MELVILLE
- lord man men
-things wine ha"]
+ lord man things
+men gods soul" shape=rectangle]
 	T02 [label="T02 MELVILLE
- sea air fish
-round day trees"]
+ sir thou thee
+boy man brother" shape=rectangle]
 	T03 [label="T03 MELVILLE
- man way friend
-nature sort stranger"]
-	T04 [label="T04 MELVILLE
- sir herb confidence
-man herb doctor"]
-	T05 [label="T05 AUSTEN
- father mother family
-years brother time"]
+ round man child
+hand ha time" shape=rectangle]
+	T04 [label="T04 AUSTEN
+ jacket philosophy friend
+man boots tho" shape=ellipse]
+	T05 [label="T05 MELVILLE
+ valley natives island
+time islanders house" shape=rectangle]
 	T06 [label="T06 MELVILLE
- landlord abbey gallery
-generals harpooneer general"]
+ consul place emigrants
+steerage doctor rest" shape=rectangle]
 	T07 [label="T07 MELVILLE
- doctor day country
-village horse morning"]
-	T08 [label="T08 AUSTEN
- room door house
-moment time bed"]
-	T09 [label="T09 MELVILLE
- gods god image
-lord idols images"]
-	T10 [label="T10 MELVILLE
- valley natives time
-island house place"]
+ ye man leg
+thou hand aye" shape=rectangle]
+	T08 [label="T08 MELVILLE
+ feet man head
+crown tail blade" shape=rectangle]
+	T09 [label="T09 AUSTEN
+ house place country
+ladies home family" shape=ellipse]
+	T10 [label="T10 AUSTEN
+ father years mother
+wife sisters pounds" shape=ellipse]
 	T11 [label="T11 MELVILLE
- whiteness teeth kings
-royal milk bull"]
+ doctor apples way
+man mother work" shape=rectangle]
 	T12 [label="T12 MELVILLE
- sea time land
-water ship air"]
+ paper thee thou
+bread hath hand" shape=rectangle]
 	T13 [label="T13 MELVILLE
- man canoe time
-face cook island"]
+ book sort way
+thing captain sailors" shape=rectangle]
 	T14 [label="T14 MELVILLE
- men time world
-things years people"]
-	T15 [label="T15 MELVILLE
- captain ship cabin
-voyage dollars ships"]
-	T16 [label="T16 AUSTEN
- thing oh body
-way day world"]
+ feet eyes rock
+stream roots night" shape=rectangle]
+	T15 [label="T15 AUSTEN
+ time room thing
+man day oh" shape=ellipse]
+	T16 [label="T16 MELVILLE
+ doctor time way
+round man island" shape=rectangle]
 	T17 [label="T17 MELVILLE
- kings house king
-heart mind time"]
+ merchant way character
+years man characters" shape=rectangle]
 	T18 [label="T18 MELVILLE
- boy mother room
-door man guide"]
+ man friend sort
+stranger way time" shape=rectangle]
 	T19 [label="T19 MELVILLE
- world things soul
-man heart life"]
-	T20 [label="T20 AUSTEN
- time feelings heart
-mind moment letter"]
-	T21 [label="T21 AUSTEN
- man barber gentleman
-men sort world"]
+ ship vessel way
+hammock craft rigging" shape=rectangle]
+	T20 [label="T20 MELVILLE
+ gold crimson land
+item issue groves" shape=rectangle]
+	T21 [label="T21 MELVILLE
+ brigantine ship sailors
+ships sea board" shape=rectangle]
 	T22 [label="T22 MELVILLE
- reign time men
-head day sailor"]
+ portrait father picture
+time fathers thing" shape=rectangle]
 	T23 [label="T23 AUSTEN
- oh ball sir
-evening way yes"]
+ time letter sister
+feelings heart mind" shape=ellipse]
 	T24 [label="T24 MELVILLE
- man day time
-consul boat way"]
-	T25 [label="T25 MELVILLE
- whale boat whales
-ship boats head"]
+ man law officers
+war men beard" shape=rectangle]
+	T25 [label="T25 AUSTEN
+ walk time house
+day horse morning" shape=ellipse]
 	T26 [label="T26 MELVILLE
- isle lord king
-minstrel spears land"]
+ man world nature
+soul life face" shape=rectangle]
 	T27 [label="T27 MELVILLE
- skeleton lord feet
-bones sea things"]
+ man hand ship
+gentlemen time sort" shape=rectangle]
 	T28 [label="T28 MELVILLE
- book thing volume
-paper books reading"]
+ canoe soul priest
+maiden devils yillah" shape=rectangle]
 	T29 [label="T29 MELVILLE
- man men war
-gun guns deck"]
+ log quadrant sea
+time way cabin" shape=rectangle]
 	T30 [label="T30 MELVILLE
- sea ship deck
-night man sail"]
+ punishment lashes fleet
+cat dozen teeth" shape=rectangle]
 	T31 [label="T31 MELVILLE
- friendship jacket auction
-need loan friend"]
+ sea water air
+ship wind boat" shape=rectangle]
 	T32 [label="T32 MELVILLE
- law man court
-punishment laws code"]
+ man men deck
+ship time sailors" shape=rectangle]
 	T33 [label="T33 MELVILLE
- guitar head mystery
-oil girl whale"]
+ mother love thee
+guitar world woman" shape=rectangle]
 	T34 [label="T34 MELVILLE
- man deck men
-ship sailors time"]
+ carpenter stone coffin
+end men man" shape=rectangle]
 	T35 [label="T35 MELVILLE
- wife chimney table
-time cock man"]
+ mess cook day
+shrine butter heart" shape=rectangle]
 	T36 [label="T36 MELVILLE
- boots glass place
-sailors jacket friend"]
+ whale whales boat
+ship head boats" shape=rectangle]
 	T37 [label="T37 MELVILLE
- thou thee art
-brother oh face"]
-	T38 [label="T38 AUSTEN
- time day house
-thing room sister"]
+ skeleton feet whale
+skull whales way" shape=rectangle]
+	T38 [label="T38 MELVILLE
+ king kings people
+island royal missionaries" shape=rectangle]
 	T39 [label="T39 MELVILLE
- box gentlemen man
-uncle leg operation"]
+ officers lady man
+men thou soldiers" shape=rectangle]
 # Edges
-	T00 -- T04
+	T00 -- T02
+	T00 -- T03
+	T00 -- T07
+	T00 -- T08
 	T00 -- T12
-	T00 -- T14
+	T00 -- T13
+	T00 -- T15
 	T00 -- T18
-	T00 -- T24
-	T00 -- T28
-	T00 -- T29
-	T00 -- T30
-	T00 -- T34
-	T00 -- T36
+	T00 -- T23
+	T00 -- T25
+	T00 -- T26
+	T00 -- T33
 	T01 -- T02
 	T01 -- T03
-	T01 -- T04
-	T01 -- T06
 	T01 -- T07
-	T01 -- T08
-	T01 -- T10
-	T01 -- T12
-	T01 -- T13
-	T01 -- T14
-	T01 -- T17
 	T01 -- T18
-	T01 -- T19
-	T01 -- T23
 	T01 -- T26
-	T01 -- T27
-	T01 -- T30
+	T01 -- T28
+	T01 -- T31
+	T01 -- T33
 	T01 -- T35
-	T01 -- T36
-	T01 -- T37
-	T02 -- T06
+	T01 -- T38
+	T02 -- T03
 	T02 -- T07
-	T02 -- T09
-	T02 -- T10
+	T02 -- T11
 	T02 -- T12
-	T02 -- T13
-	T02 -- T14
-	T02 -- T17
-	T02 -- T19
-	T02 -- T25
+	T02 -- T18
+	T02 -- T22
 	T02 -- T26
-	T02 -- T27
-	T02 -- T30
-	T02 -- T31
-	T02 -- T32
 	T02 -- T33
-	T02 -- T37
-	T02 -- T39
-	T03 -- T04
-	T03 -- T06
-	T03 -- T07
+	T02 -- T34
+	T03 -- T05
 	T03 -- T09
-	T03 -- T13
+	T03 -- T12
 	T03 -- T14
-	T03 -- T16
-	T03 -- T18
-	T03 -- T19
-	T03 -- T21
-	T03 -- T24
-	T03 -- T28
+	T03 -- T20
+	T03 -- T22
 	T03 -- T31
-	T03 -- T33
 	T03 -- T35
 	T03 -- T36
-	T04 -- T06
-	T04 -- T07
-	T04 -- T08
+	T03 -- T37
+	T03 -- T38
+	T04 -- T10
 	T04 -- T11
-	T04 -- T13
-	T04 -- T18
+	T04 -- T14
 	T04 -- T21
-	T04 -- T23
-	T04 -- T29
-	T04 -- T30
-	T04 -- T32
-	T04 -- T37
-	T04 -- T39
-	T05 -- T17
-	T05 -- T18
-	T05 -- T19
-	T05 -- T20
-	T05 -- T21
-	T05 -- T23
-	T05 -- T33
+	T05 -- T06
+	T05 -- T08
+	T05 -- T09
+	T05 -- T14
+	T05 -- T16
+	T05 -- T27
+	T05 -- T28
+	T05 -- T31
 	T05 -- T38
-	T06 -- T08
 	T06 -- T11
-	T06 -- T25
+	T06 -- T13
+	T06 -- T16
 	T06 -- T27
-	T06 -- T28
-	T06 -- T30
+	T06 -- T32
 	T06 -- T35
-	T06 -- T36
-	T06 -- T37
-	T07 -- T10
+	T06 -- T38
 	T07 -- T12
 	T07 -- T13
-	T07 -- T16
-	T07 -- T20
-	T07 -- T24
+	T07 -- T22
+	T07 -- T27
+	T07 -- T28
+	T07 -- T31
+	T07 -- T32
 	T07 -- T33
-	T07 -- T34
-	T07 -- T35
 	T07 -- T36
-	T07 -- T37
-	T07 -- T38
-	T08 -- T18
-	T08 -- T19
-	T08 -- T20
-	T08 -- T23
-	T08 -- T28
-	T08 -- T33
-	T08 -- T35
-	T08 -- T36
-	T08 -- T37
+	T08 -- T10
+	T08 -- T13
+	T08 -- T16
+	T08 -- T22
+	T08 -- T27
 	T08 -- T38
-	T08 -- T39
-	T09 -- T10
-	T09 -- T12
-	T09 -- T13
-	T09 -- T14
-	T09 -- T17
-	T09 -- T18
-	T09 -- T19
-	T09 -- T24
-	T09 -- T26
-	T09 -- T27
-	T09 -- T32
-	T09 -- T37
-	T09 -- T39
-	T10 -- T12
-	T10 -- T13
-	T10 -- T14
-	T10 -- T22
-	T10 -- T24
-	T10 -- T28
-	T10 -- T31
-	T10 -- T34
-	T10 -- T35
-	T10 -- T39
-	T11 -- T12
-	T11 -- T13
-	T11 -- T14
-	T11 -- T19
-	T11 -- T32
-	T12 -- T13
-	T12 -- T14
-	T12 -- T15
-	T12 -- T17
-	T12 -- T19
+	T09 -- T15
+	T09 -- T23
+	T09 -- T25
+	T09 -- T30
+	T09 -- T38
+	T10 -- T17
+	T10 -- T23
+	T11 -- T16
+	T11 -- T18
+	T11 -- T33
 	T12 -- T24
-	T12 -- T25
 	T12 -- T26
-	T12 -- T29
-	T12 -- T30
-	T12 -- T34
-	T12 -- T39
-	T13 -- T14
-	T13 -- T17
-	T13 -- T25
+	T12 -- T37
+	T13 -- T18
+	T13 -- T21
 	T13 -- T27
-	T13 -- T28
-	T13 -- T29
-	T13 -- T30
+	T13 -- T31
 	T13 -- T32
-	T13 -- T34
-	T13 -- T39
-	T14 -- T17
-	T14 -- T19
-	T14 -- T25
-	T14 -- T26
-	T14 -- T27
-	T14 -- T28
-	T14 -- T29
-	T14 -- T30
-	T14 -- T34
-	T14 -- T35
-	T14 -- T36
-	T15 -- T18
-	T15 -- T19
+	T13 -- T36
+	T14 -- T20
+	T14 -- T33
+	T14 -- T37
 	T15 -- T23
 	T15 -- T25
-	T15 -- T28
-	T15 -- T29
-	T15 -- T30
-	T15 -- T32
-	T15 -- T33
-	T15 -- T34
-	T15 -- T36
-	T15 -- T37
-	T15 -- T39
-	T16 -- T20
-	T16 -- T21
-	T16 -- T23
-	T16 -- T28
-	T16 -- T29
-	T16 -- T33
-	T16 -- T36
+	T16 -- T24
+	T16 -- T26
 	T16 -- T38
-	T16 -- T39
-	T17 -- T18
-	T17 -- T19
-	T17 -- T24
-	T17 -- T26
-	T17 -- T27
-	T17 -- T28
-	T17 -- T30
-	T17 -- T32
-	T17 -- T33
-	T17 -- T35
+	T17 -- T25
+	T17 -- T34
 	T17 -- T37
-	T18 -- T19
-	T18 -- T21
-	T18 -- T22
-	T18 -- T23
 	T18 -- T26
-	T18 -- T28
+	T18 -- T27
 	T18 -- T33
-	T18 -- T35
-	T18 -- T37
-	T18 -- T39
-	T19 -- T21
-	T19 -- T24
-	T19 -- T27
+	T19 -- T22
 	T19 -- T28
-	T19 -- T30
 	T19 -- T35
-	T19 -- T37
-	T20 -- T21
-	T20 -- T23
+	T19 -- T36
+	T20 -- T22
+	T20 -- T25
+	T20 -- T27
 	T20 -- T38
-	T21 -- T23
-	T21 -- T28
-	T21 -- T29
-	T21 -- T38
-	T23 -- T28
-	T23 -- T38
+	T20 -- T39
+	T21 -- T31
+	T21 -- T32
+	T21 -- T36
+	T22 -- T24
+	T22 -- T26
+	T22 -- T33
+	T23 -- T25
 	T24 -- T27
+	T24 -- T30
+	T24 -- T32
 	T24 -- T34
+	T24 -- T36
 	T24 -- T37
-	T25 -- T27
 	T25 -- T30
-	T25 -- T32
-	T25 -- T34
-	T25 -- T36
-	T25 -- T37
-	T25 -- T39
-	T26 -- T30
-	T26 -- T32
-	T27 -- T37
+	T25 -- T38
+	T26 -- T33
+	T26 -- T34
+	T27 -- T31
+	T27 -- T32
+	T27 -- T36
 	T27 -- T39
 	T28 -- T29
-	T28 -- T30
+	T28 -- T31
+	T28 -- T33
+	T28 -- T34
 	T28 -- T35
-	T28 -- T36
-	T29 -- T30
-	T29 -- T31
-	T29 -- T34
-	T29 -- T36
+	T28 -- T38
 	T30 -- T32
-	T30 -- T34
-	T30 -- T35
-	T30 -- T36
-	T30 -- T37
-	T30 -- T39
-	T32 -- T34
+	T31 -- T32
+	T31 -- T36
+	T31 -- T38
+	T31 -- T39
 	T32 -- T36
-	T32 -- T37
-	T33 -- T37
+	T32 -- T39
 	T34 -- T36
-	T35 -- T36
-	T35 -- T37
-	T36 -- T39
-	T37 -- T39
+	T35 -- T38
+	T36 -- T37
 }
