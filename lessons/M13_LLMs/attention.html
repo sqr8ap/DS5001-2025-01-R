@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Attention Mechanisms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .code-block {
+            font-family: 'Courier New', monospace;
+            background-color: #f8f8f8;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .attention-vis {
+            width: 100%;
+            height: 300px;
+            background-color: #f0f9ff;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+        .token {
+            position: absolute;
+            padding: 0.5rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .attention-line {
+            position: absolute;
+            height: 2px;
+            background-color: #3b82f6;
+            transform-origin: left center;
+            z-index: 1;
+        }
+        .slide-container {
+            scroll-snap-type: x mandatory;
+        }
+        .slide {
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-4">Understanding Attention Mechanisms</h1>
+            <p class="text-xl max-w-3xl">A visual and interactive guide to one of the most important concepts in modern machine learning</p>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex overflow-x-auto slide-container">
+            <a href="#introduction" class="slide px-4 py-2 text-blue-600 font-medium whitespace-nowrap">Introduction</a>
+            <a href="#basic-concept" class="slide px-4 py-2 text-gray-600 hover:text-blue-600 whitespace-nowrap">Basic Concept</a>
+            <a href="#python-example" class="slide px-4 py-2 text-gray-600 hover:text-blue-600 whitespace-nowrap">Python Example</a>
+            <a href="#interactive-demo" class="slide px-4 py-2 text-gray-600 hover:text-blue-600 whitespace-nowrap">Interactive Demo</a>
+            <a href="#applications" class="slide px-4 py-2 text-gray-600 hover:text-blue-600 whitespace-nowrap">Applications</a>
+            <a href="#resources" class="slide px-4 py-2 text-gray-600 hover:text-blue-600 whitespace-nowrap">Resources</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="introduction" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Introduction to Attention</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 mb-4">Attention mechanisms have revolutionized machine learning, particularly in natural language processing and computer vision. They allow models to focus on the most relevant parts of input data when making predictions.</p>
+                    <p class="text-gray-700 mb-4">Originally developed for machine translation, attention mechanisms are now fundamental components of state-of-the-art models like Transformers, BERT, and GPT.</p>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                        <p class="text-blue-800"><i class="fas fa-lightbulb mr-2"></i> <strong>Key Idea:</strong> Instead of treating all input equally, attention allows models to dynamically focus on the most relevant parts of the input for each prediction.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Why Attention Matters</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Handles long-range dependencies better than RNNs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Provides interpretability through attention weights</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Enables parallel computation during training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>More efficient memory usage for long sequences</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="basic-concept" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">The Basic Concept</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 mb-4">At its core, attention is about computing a weighted average of values, where the weights are computed by a compatibility function between a query and the keys associated with those values.</p>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
+                        <p class="text-yellow-800"><i class="fas fa-exclamation-triangle mr-2"></i> <strong>Attention Formula:</strong> Attention(Q, K, V) = softmax(QK<sup>T</sup>/√d<sub>k</sub>)V</p>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-4">Where:</p>
+                    <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                        <li><strong>Q (Query):</strong> What we're looking for</li>
+                        <li><strong>K (Key):</strong> What's available to compare against</li>
+                        <li><strong>V (Value):</strong> The actual content we want to extract</li>
+                        <li><strong>d<sub>k</sub>:</strong> Dimension of the keys (for scaling)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Visualizing Attention</h3>
+                    <div class="attention-vis mb-4" id="attention-vis-basic">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                    <button onclick="runBasicAttentionDemo()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">
+                        <i class="fas fa-play mr-2"></i> Run Demo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="python-example" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Python Implementation</h2>
+            <p class="text-gray-700 mb-6">Here's a basic implementation of attention in Python using NumPy:</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="code-block mb-4">
+                        <pre><code class="language-python">import numpy as np
+
+def scaled_dot_product_attention(Q, K, V):
+    """Compute scaled dot product attention."""
+    # Calculate dot products between queries and keys
+    matmul_qk = np.matmul(Q, K.T)
+    
+    # Scale by square root of key dimension
+    dk = K.shape[-1]
+    scaled_attention_logits = matmul_qk / np.sqrt(dk)
+    
+    # Softmax to get attention weights
+    attention_weights = softmax(scaled_attention_logits)
+    
+    # Multiply weights by values
+    output = np.matmul(attention_weights, V)
+    
+    return output, attention_weights
+
+def softmax(x):
+    """Compute softmax values for each row."""
+    e_x = np.exp(x - np.max(x, axis=-1, keepdims=True))
+    return e_x / e_x.sum(axis=-1, keepdims=True)
+
+# Example usage
+Q = np.array([[1, 0, 1]])  # Query
+K = np.array([[1, 0, 1], [0, 1, 0], [1, 1, 0]])  # Keys
+V = np.array([[1, 2], [2, 3], [3, 4]])  # Values
+
+output, attn_weights = scaled_dot_product_attention(Q, K, V)
+print("Output:", output)
+print("Attention Weights:", attn_weights)</code></pre>
+                    </div>
+                    <button onclick="runPythonExample()" class="bg-blue-600 hover:
+</html>
